@@ -74,4 +74,4 @@ data/cctv_events.db
 /*.pt
 /*.onnx
 /*.pth
-/*.weights
+/*.weightstraining/train_fire_smoke.py.bak
