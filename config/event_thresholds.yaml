@@ -1,0 +1,48 @@
+# Event detection thresholds and temporal confirmation windows.
+# Each detector can override these at runtime via PUT /config.
+
+# Global confirmation windows (seconds of sustained evidence before confirming)
+confirmation:
+  fight: 1.5
+  fire: 2.0
+  smoke: 2.0
+  fall: 1.0
+  crowd_violence: 2.0
+  abnormal_running: 1.5
+
+# Cooldown in seconds before the same (event_type, track_id) can re-fire
+cooldown:
+  fight: 5.0
+  fire: 10.0
+  smoke: 10.0
+  fall: 8.0
+  crowd_violence: 5.0
+  abnormal_running: 3.0
+
+# Confidence thresholds (0-1)
+thresholds:
+  fight: 0.60
+  fire: 0.60
+  smoke: 0.60
+  fall: 0.60
+  crowd_violence: 0.60
+  abnormal_running: 0.55
+
+# Per-detector tuning
+detectors:
+  fall:
+    max_aspect_ratio: 1.6        # width/height above this is not a fall posture
+    min_height_drop_ratio: 0.30  # vertical displacement relative to track height
+    fall_speed_px_per_s: 120     # image-plane speed threshold
+  running:
+    speed_threshold_px_per_s: 90 # image-plane speed (uncalibrated)
+    min_persistence_s: 1.0
+  crowd_violence:
+    min_persons: 4
+    aggression_motion_ratio: 0.4  # fraction of persons with high accel
+  fire_smoke:
+    temporal_confirmation_frames: 15
+    min_contiguous_frames: 5
+  fight:
+    min_overlap_duration_s: 0.5
+    proximity_ratio: 0.6          # bbox IoU / distance threshold

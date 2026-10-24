@@ -1,0 +1,77 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Environment
+.env
+.env.local
+
+# Models and data (large binaries, never commit)
+models/*.pt
+models/*.onnx
+models/*.pth
+models/*.weights
+data/videos/*
+!data/videos/.gitkeep
+data/datasets/*
+!data/datasets/.gitkeep
+data/incidents/*
+!data/incidents/.gitkeep
+
+# Databases
+*.db
+*.sqlite3
+
+# Logs
+logs/*
+!logs/.gitkeep
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+
+# Project-specific generated files
+*.log
+backend_out.log
+backend_err.log
+dashboard.log
+dashboard_err.log
+runs/
+data/cctv_events.db
+
+# Model weights in project root
+/*.pt
+/*.onnx
+/*.pth
+/*.weights
